@@ -62,6 +62,3 @@ Buka [http://localhost:5173](http://localhost:5173).
 Buka https://portal-berita-sederhana.vercel.app/
 
 ---
-
-## 👨‍💻 Author
-Dibuat oleh **[Your Name](https://github.com/username)**  
