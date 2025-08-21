@@ -1,6 +1,6 @@
 // src/App.jsx
 import { useEffect, useState } from "react";
-import SearchBar from "./searchbar";
+import SearchBar from "./SearchBar";
 import NewsList from "./NewsList";
 
 function App() {

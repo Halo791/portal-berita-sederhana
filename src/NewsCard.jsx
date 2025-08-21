@@ -15,7 +15,7 @@ function NewsCard({ item }) {
           />
         ) : (
           <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500">
-            📷 No Image
+            📷 Image Not Found
           </div>
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
