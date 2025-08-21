@@ -1,4 +1,4 @@
-# 📰 AI News Portal
+# 📰 AI News Portal Sederhana
 
 Portal berita sederhana untuk mengumpulkan artikel tentang **Artificial Intelligence** dari beberapa sumber API:
 - [NewsAPI](https://newsapi.org/)
@@ -20,7 +20,8 @@ Dibangun dengan **React + Vite + TailwindCSS**, serta di-deploy menggunakan **Ve
 
 ## 📸 Tampilan
 Beranda portal dengan daftar berita AI.  
-*(tambahkan screenshot di sini setelah deploy ke Vercel)*  
+<img width="1755" height="857" alt="gambar" src="https://github.com/user-attachments/assets/c1fae26e-d7f2-437e-9286-8fdc0f1fcb18" />
+
 
 ---
 
@@ -56,28 +57,11 @@ Buka [http://localhost:5173](http://localhost:5173).
 
 ---
 
-## 📦 Deployment ke Vercel
-1. Push project ke GitHub.  
-2. Login ke [Vercel](https://vercel.com/).  
-3. Import repository.  
-4. Tambahkan **Environment Variables**:  
-   - `NEWSAPI_KEY`
-   - `GNEWS_KEY`
-   - `NEWSDATA_KEY`  
-5. Deploy 🚀
-
----
-
-## 🛠️ Teknologi
-- [React](https://react.dev/) (Frontend)
-- [Vite](https://vitejs.dev/) (Build tool)
-- [TailwindCSS](https://tailwindcss.com/) (UI styling)
-- [Vercel](https://vercel.com/) (Deployment)
-
----
-
-## 📜 Lisensi
-MIT License © 2025 [Your Name]
+### 5. Run Vercel App
+```bash
+npm run dev
+```
+Buka [Portal Berita Sederhana]([http://localhost:5173](https://portal-berita-sederhana.vercel.app/)).
 
 ---
 
