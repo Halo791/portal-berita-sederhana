@@ -52,8 +52,6 @@ VITE_GNEWS_KEY=your_gnews_key
 VITE_NEWSDATA_KEY=your_newsdata_key
 ```
 
-> **Catatan:** Saat deploy ke Vercel, masukkan variable ini di **Project → Settings → Environment Variables**.
-
 ### 4. Run Local Development
 ```bash
 npm run dev
