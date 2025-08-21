@@ -58,10 +58,8 @@ Buka [http://localhost:5173](http://localhost:5173).
 ---
 
 ### 5. Run Vercel App
-```bash
-npm run dev
-```
-Buka [Portal Berita Sederhana]([http://localhost:5173](https://portal-berita-sederhana.vercel.app/)).
+
+Buka https://portal-berita-sederhana.vercel.app/
 
 ---
 
