@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import NewsList from "./NewsList";
 
-
 const newsapiKey = import.meta.env.VITE_NEWSAPI_KEY;
 const gnewsKey = import.meta.env.VITE_GNEWS_KEY;
 const newsdataKey = import.meta.env.VITE_NEWSDATA_KEY;
@@ -18,28 +17,30 @@ function App() {
 
 async function fetchNews() {
   try {
-    const [newsapi, gnews, newsdata] = await Promise.all([
+    const responses = await Promise.allSettled([
       fetch(`https://newsapi.org/v2/everything?q=artificial+intelligence&apiKey=${newsapiKey}`).then(r => r.json()),
       fetch(`https://gnews.io/api/v4/search?q=artificial+intelligence&apikey=${gnewsKey}`).then(r => r.json()),
       fetch(`https://newsdata.io/api/1/news?apikey=${newsdataKey}&q=artificial+intelligence&language=en`).then(r => r.json()),
     ]);
-    
+
+    const [newsapi, gnews, newsdata] = responses.map(r => r.status === "fulfilled" ? r.value : null);
+
     const formattedNews = [
-      ...newsapi.articles.map(a => ({
+      ...(newsapi?.articles || []).map(a => ({
         title: a.title,
         url: a.url,
         image: a.urlToImage,
         date: a.publishedAt,
         source: "NewsAPI"
       })),
-      ...gnews.articles.map(g => ({
+      ...(gnews?.articles || []).map(g => ({
         title: g.title,
         url: g.url,
         image: g.image,
         date: g.publishedAt,
-        source: g.source.name || "GNews"
+        source: g.source?.name || "GNews"
       })),
-      ...newsdata.results.map(n => ({
+      ...(newsdata?.results || []).map(n => ({
         title: n.title,
         url: n.link,
         image: n.image_url,
