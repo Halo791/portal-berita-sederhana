@@ -19,10 +19,14 @@ Dibangun dengan **React + Vite + TailwindCSS**, serta di-deploy menggunakan **Ve
 ---
 
 ## 📸 Tampilan
-Beranda portal dengan daftar berita AI.  
+Tampilan homepage portal berita sederhana yang dibuka menggunakan Vercel
 <img width="1755" height="857" alt="gambar" src="https://github.com/user-attachments/assets/c1fae26e-d7f2-437e-9286-8fdc0f1fcb18" />
 
+Tampilan homepage portal berita sederhana yang dibuka menggunakan Localhost
+<img width="1757" height="981" alt="gambar" src="https://github.com/user-attachments/assets/6b173615-b26f-4da0-9c4f-2bd8ef77c373" />
 
+
+*** Terdapat Perbedaan tampilan homepage display berita saat proses fetching data antara Vercel dan Localhost, dikarenakan dari ketiga API yang digunakan hanya satu saja yang berhasil yaitu NewsData.io. Penyebabnya adalah NewsAPI dan GNewsAPI terdampak CORS restriction di Vercel, karena kedua API itu tidak mengizinkan direct call dari browser. Sehingga pada saat membuka lewat Vercel display berita hanya sedikit, berbeda saat membuka lewat Localhost***
 ---
 
 ## 🚀 Instalasi
