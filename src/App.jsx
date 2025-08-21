@@ -3,6 +3,11 @@ import { useEffect, useState } from "react";
 import SearchBar from "./SearchBar";
 import NewsList from "./NewsList";
 
+
+const newsapiKey = import.meta.env.VITE_NEWSAPI_KEY;
+const gnewsKey = import.meta.env.VITE_GNEWS_KEY;
+const newsdataKey = import.meta.env.VITE_NEWSDATA_KEY;
+
 function App() {
   const [allNews, setAllNews] = useState([]);
   const [filteredNews, setFilteredNews] = useState([]);
@@ -14,11 +19,11 @@ function App() {
 async function fetchNews() {
   try {
     const [newsapi, gnews, newsdata] = await Promise.all([
-      fetch(`https://newsapi.org/v2/everything?q=artificial+intelligence&apiKey=382acb61115945c2924df9882d0600c7`).then(r => r.json()),
-      fetch(`https://gnews.io/api/v4/search?q=artificial+intelligence&apikey=7f3694621533ada3260b77f62f95ccc0`).then(r => r.json()),
-      fetch(`https://newsdata.io/api/1/latest?apikey=pub_deff1af12aa548ae9e061ba11804b121&q=artificial+intelligence`).then(r => r.json()),
+      fetch(`https://newsapi.org/v2/everything?q=artificial+intelligence&apiKey=${newsapiKey}`).then(r => r.json()),
+      fetch(`https://gnews.io/api/v4/search?q=artificial+intelligence&apikey=${gnewsKey}`).then(r => r.json()),
+      fetch(`https://newsdata.io/api/1/news?apikey=${newsdataKey}&q=artificial+intelligence&language=en`).then(r => r.json()),
     ]);
-
+    
     const formattedNews = [
       ...newsapi.articles.map(a => ({
         title: a.title,
