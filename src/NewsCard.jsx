@@ -1,16 +1,34 @@
-// src/components/NewsCard.jsx
 function NewsCard({ item }) {
   return (
-    <div className="bg-white p-4 rounded-lg shadow">
-      <h2 className="font-semibold text-lg mb-2">
-        <a href={item.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
+    <a 
+      href={item.url} 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="group block rounded-xl overflow-hidden shadow hover:shadow-xl transition-shadow bg-white"
+    >
+      <div className="relative">
+        {item.image ? (
+          <img
+            src={item.image}
+            alt={item.title}
+            className="w-full h-48 object-cover group-hover:scale-105 transition-transform"
+          />
+        ) : (
+          <div className="w-full h-48 bg-gray-200 flex items-center justify-center text-gray-500">
+            📷 No Image
+          </div>
+        )}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+        <div className="absolute bottom-2 left-2 text-xs text-white bg-black/50 px-2 py-1 rounded">
+          {new Date(item.date).toLocaleDateString()} • {item.source}
+        </div>
+      </div>
+      <div className="p-4">
+        <h2 className="font-semibold text-lg text-gray-900 group-hover:text-blue-600 line-clamp-2">
           {item.title}
-        </a>
-      </h2>
-      <p className="text-sm text-gray-500">
-        {new Date(item.date).toLocaleString()} - {item.source}
-      </p>
-    </div>
+        </h2>
+      </div>
+    </a>
   );
 }
 

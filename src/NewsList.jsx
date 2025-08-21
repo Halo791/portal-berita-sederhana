@@ -1,4 +1,3 @@
-// src/components/NewsList.jsx
 import NewsCard from "./NewsCard";
 
 function NewsList({ news }) {
@@ -7,7 +6,7 @@ function NewsList({ news }) {
   }
 
   return (
-    <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
       {news.map((item, idx) => (
         <NewsCard key={idx} item={item} />
       ))}

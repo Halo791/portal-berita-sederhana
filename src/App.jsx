@@ -23,18 +23,21 @@ async function fetchNews() {
       ...newsapi.articles.map(a => ({
         title: a.title,
         url: a.url,
+        image: a.urlToImage,
         date: a.publishedAt,
         source: "NewsAPI"
       })),
       ...gnews.articles.map(g => ({
         title: g.title,
         url: g.url,
+        image: g.image,
         date: g.publishedAt,
         source: g.source.name || "GNews"
       })),
       ...newsdata.results.map(n => ({
         title: n.title,
         url: n.link,
+        image: n.image_url,
         date: n.pubDate,
         source: n.source_id || "NewsData.io"
       }))
@@ -55,11 +58,13 @@ async function fetchNews() {
   }
 
   return (
-    <div className="container mx-auto p-4">
-      <h1 className="text-3xl font-bold mb-4 text-center">📰 Artificial Intelligence News Update</h1>
-      <SearchBar onSearch={handleSearch} />
-      <NewsList news={filteredNews} />
-    </div>
+      <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100 p-6">
+        <h1 className="text-4xl font-extrabold mb-6 text-center text-gray-800">
+          📰 AI News Update
+        </h1>
+        <SearchBar onSearch={handleSearch} />
+        <NewsList news={filteredNews} />
+      </div>
   );
 }
 
